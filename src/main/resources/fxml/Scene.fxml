@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="com.onigoy.hatenabookmarkscrapetest.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.onigoy.hatenabookmarkscrapetest.FXMLController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TableView fx:id="table" prefHeight="539.0" prefWidth="772.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="pageTitleColumn" prefWidth="300.0" text="pageTitle" />
+                <TableColumn fx:id="bookmarkUserColumn" prefWidth="175.0" text="bookmarkUser" />
+                  <TableColumn fx:id="bookmarkCommentColumn" prefWidth="300.0" text="bookmarkComment" />
+              </columns>
+               <BorderPane.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </BorderPane.margin>
+            </TableView>
+         </center>
+         <bottom>
+            <FlowPane hgap="3.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="args0" minWidth="200.0" text="http://www.google.com" />
+                  <TextField fx:id="args1" text="1" />
+                    <Button fx:id="button" onAction="#handleButtonAction" text="Click Me!" />
+                    <Label fx:id="label" minHeight="16" minWidth="69" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" />
+               </BorderPane.margin>
+            </FlowPane>
+         </bottom>
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
     </children>
 </AnchorPane>
