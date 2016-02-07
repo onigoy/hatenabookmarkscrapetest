@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.onigoy.hatenabookmarkscrapetest.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.onigoy.hatenabookmarkscrapetest.FXMLController">
     <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -15,7 +15,7 @@
               <columns>
                 <TableColumn fx:id="pageTitleColumn" prefWidth="300.0" text="pageTitle" />
                 <TableColumn fx:id="bookmarkUserColumn" prefWidth="175.0" text="bookmarkUser" />
-                  <TableColumn fx:id="bookmarkCommentColumn" prefWidth="300.0" text="bookmarkComment" />
+                  <TableColumn fx:id="bookmarkCommentColumn" prefWidth="400.0" text="bookmarkComment" />
               </columns>
                <BorderPane.margin>
                   <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
@@ -27,7 +27,7 @@
                <children>
                   <TextField fx:id="args0" minWidth="200.0" text="http://www.google.com" />
                   <TextField fx:id="args1" text="1" />
-                    <Button fx:id="button" onAction="#handleButtonAction" text="Click Me!" />
+                    <Button fx:id="button" onAction="#handleButtonAction" text="実行" />
                     <Label fx:id="label" minHeight="16" minWidth="69" />
                </children>
                <BorderPane.margin>
@@ -40,7 +40,7 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleMenuAboutAction" text="About" />
                   </items>
                 </Menu>
               </menus>

@@ -8,10 +8,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ResourceBundle;
-import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -45,11 +46,23 @@ public class FXMLController implements Initializable {
     private void handleButtonAction(ActionEvent event) {
 //        label.setText("...");
 
+        // TODO 多分、データバインドする方法があるはず
+
         table.getItems().clear();
 
         scrapeHatenaBookmark();
 
 //        label.setText("取得しました！");
+    }
+
+    @FXML
+    private void handleMenuAboutAction(ActionEvent event) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("HatenaBookmark Scrapte Test");
+        alert.setHeaderText(null);
+        alert.setContentText("onigoyと申します。仕事募集中です！");
+
+        alert.showAndWait();
     }
 
     @Override
